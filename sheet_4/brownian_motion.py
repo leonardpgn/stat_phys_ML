@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 D = 1
 
 
-def brownian_motion(time, partition):
+def brownian_motion(time, partition, ornstein=False):
     time_fraction = time / partition
     x = 0
     t_vals = np.linspace(0, time, partition)
@@ -12,6 +12,8 @@ def brownian_motion(time, partition):
     for t in t_vals:
         x_vals.append(x)
         x += np.sqrt(2 * D) * np.random.normal(loc=0, scale=np.sqrt(time_fraction), size=None)
+        if ornstein:
+            x -= x * time_fraction
 
     return t_vals, np.array(x_vals)
 
@@ -41,3 +43,10 @@ ax.plot(*mean_squared_displacement(10, 1000, 1000))
 
 fig.tight_layout()
 fig.savefig('mean_squared_displacement.png')
+
+fig, ax = plt.subplots(dpi=500)
+for _ in range(3):
+    ax.plot(*brownian_motion(10, 1000, True))
+
+fig.tight_layout()
+fig.savefig('brownian_motion_ornstein.png')
