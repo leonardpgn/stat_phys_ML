@@ -31,14 +31,24 @@ fig.tight_layout()
 fig.savefig("./figures/data.png")
 
 
-# c
-empirical_risk_values = []
+# c,d
+def residual_error(y_true, y_pred):
+    return sum((y_true - y_pred) ** 2) / len(y_true)
+
+
+empirical_risk_values_train, empirical_risk_values_test = [], []
 for k in range(11):
-    empirical_risk_values.append(np.polyfit(train_t, train_y, k, full=True)[1][0] / len(train_t))
+    fit_parameters, residuals = np.polyfit(train_t, train_y, k, full=True)[0:2]
+    empirical_risk_values_train.append(residuals[0] / len(train_t))
+    fitting_function = np.poly1d(fit_parameters)
+    empirical_risk_values_test.append(residual_error(fitting_function(test_t), test_y))
+print(empirical_risk_values_test)
 
 fig, ax = plt.subplots(dpi=500)
-ax.plot(range(11), empirical_risk_values)
+ax.plot(range(11), empirical_risk_values_train, label="Train data")
+ax.plot(range(11), empirical_risk_values_test, label="Test data")
 ax.set(xlabel="Order k", ylabel="Empirical risk", xticks=range(11))
+ax.legend()
 
 fig.tight_layout()
 fig.savefig("./figures/empirical_risk.png")

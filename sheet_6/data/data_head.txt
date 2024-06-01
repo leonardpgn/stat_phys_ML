@@ -1,0 +1,131 @@
+vendor_id: 2
+pickup_datetime: 2016-03-14 17:24:55
+dropoff_datetime: 2016-03-14 17:32:30
+passenger_count: 1
+pickup_longitude: -73.98215484619139
+pickup_latitude: 40.76793670654297
+dropoff_longitude: -73.96463012695312
+dropoff_latitude: 40.765602111816406
+store_and_fwd_flag: N
+trip_duration: 455
+
+
+
+vendor_id: 1
+pickup_datetime: 2016-06-12 00:43:35
+dropoff_datetime: 2016-06-12 00:54:38
+passenger_count: 1
+pickup_longitude: -73.98041534423827
+pickup_latitude: 40.738563537597656
+dropoff_longitude: -73.99948120117188
+dropoff_latitude: 40.731151580810554
+store_and_fwd_flag: N
+trip_duration: 663
+
+
+
+vendor_id: 2
+pickup_datetime: 2016-01-19 11:35:24
+dropoff_datetime: 2016-01-19 12:10:48
+passenger_count: 1
+pickup_longitude: -73.97902679443358
+pickup_latitude: 40.763938903808594
+dropoff_longitude: -74.00533294677734
+dropoff_latitude: 40.710086822509766
+store_and_fwd_flag: N
+trip_duration: 2124
+
+
+
+vendor_id: 2
+pickup_datetime: 2016-04-06 19:32:31
+dropoff_datetime: 2016-04-06 19:39:40
+passenger_count: 1
+pickup_longitude: -74.01004028320312
+pickup_latitude: 40.719970703125
+dropoff_longitude: -74.01226806640625
+dropoff_latitude: 40.70671844482422
+store_and_fwd_flag: N
+trip_duration: 429
+
+
+
+vendor_id: 2
+pickup_datetime: 2016-03-26 13:30:55
+dropoff_datetime: 2016-03-26 13:38:10
+passenger_count: 1
+pickup_longitude: -73.97305297851561
+pickup_latitude: 40.79320907592773
+dropoff_longitude: -73.9729232788086
+dropoff_latitude: 40.782520294189446
+store_and_fwd_flag: N
+trip_duration: 435
+
+
+
+vendor_id: 2
+pickup_datetime: 2016-01-30 22:01:40
+dropoff_datetime: 2016-01-30 22:09:03
+passenger_count: 6
+pickup_longitude: -73.98285675048828
+pickup_latitude: 40.74219512939453
+dropoff_longitude: -73.99208068847656
+dropoff_latitude: 40.74918365478516
+store_and_fwd_flag: N
+trip_duration: 443
+
+
+
+vendor_id: 1
+pickup_datetime: 2016-06-17 22:34:59
+dropoff_datetime: 2016-06-17 22:40:40
+passenger_count: 4
+pickup_longitude: -73.9690170288086
+pickup_latitude: 40.75783920288086
+dropoff_longitude: -73.95740509033203
+dropoff_latitude: 40.76589584350586
+store_and_fwd_flag: N
+trip_duration: 341
+
+
+
+vendor_id: 2
+pickup_datetime: 2016-05-21 07:54:58
+dropoff_datetime: 2016-05-21 08:20:49
+passenger_count: 1
+pickup_longitude: -73.96927642822266
+pickup_latitude: 40.79777908325195
+dropoff_longitude: -73.92247009277344
+dropoff_latitude: 40.76055908203125
+store_and_fwd_flag: N
+trip_duration: 1551
+
+
+
+vendor_id: 1
+pickup_datetime: 2016-05-27 23:12:23
+dropoff_datetime: 2016-05-27 23:16:38
+passenger_count: 1
+pickup_longitude: -73.99948120117188
+pickup_latitude: 40.738399505615234
+dropoff_longitude: -73.98578643798828
+dropoff_latitude: 40.73281478881836
+store_and_fwd_flag: N
+trip_duration: 255
+
+
+
+vendor_id: 2
+pickup_datetime: 2016-03-10 21:45:01
+dropoff_datetime: 2016-03-10 22:05:26
+passenger_count: 1
+pickup_longitude: -73.98104858398438
+pickup_latitude: 40.744338989257805
+dropoff_longitude: -73.9729995727539
+dropoff_latitude: 40.78998947143555
+store_and_fwd_flag: N
+trip_duration: 1225
+
+
+
+(1458644, 10)
