@@ -13,7 +13,7 @@ with open("./data/data_head.txt", "w") as data_head_file:
 
     print(data_frame.shape, file=data_head_file)
 
-"""
+
 # d
 starting_time, duration = data_frame["pickup_datetime"], data_frame["trip_duration"]
 formatted_starting_time, formatted_ending_time = [], []
@@ -51,7 +51,7 @@ ax.grid(alpha=.2)
 
 fig.tight_layout()
 fig.savefig("./figures/traffic_counts.png")
-"""
+
 
 # f
 passenger_count = np.array(data_frame["passenger_count"])
