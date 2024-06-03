@@ -1,6 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
 
 data_frame = pd.read_csv("./data/train.csv", index_col="id")
 
@@ -62,3 +65,35 @@ ax.set(xlabel="# passengers", ylabel="rides", yscale="log")
 
 fig.tight_layout()
 fig.savefig("./figures/passenger_data.png")
+
+
+# g
+pca_data = np.array(list(zip(
+    list(formatted_starting_time),
+    [int(q) for q in data_frame["vendor_id"]],
+    [int(q) for q in data_frame["passenger_count"]],
+    [float(q) for q in data_frame["pickup_longitude"]],
+    [float(q) for q in data_frame["pickup_latitude"]],
+    [float(q) for q in data_frame["dropoff_longitude"]],
+    [float(q) for q in data_frame["dropoff_latitude"]],
+    [int(q) for q in data_frame["trip_duration"]]
+)))
+scale = StandardScaler()
+scaled_data = scale.fit_transform(pca_data)
+
+pca = PCA(n_components=2)
+reduced_data = pca.fit_transform(scaled_data)
+
+kmeans = KMeans(n_clusters=2, random_state=0)
+kmeans.fit(reduced_data)
+
+centers = kmeans.cluster_centers_
+
+fig, ax = plt.subplots(dpi=500)
+ax.scatter(reduced_data[:, 0], reduced_data[:, 1], c=kmeans.labels_, s=10)
+ax.scatter(centers[:, 0], centers[:, 1], color="dodgerblue", s=10)
+
+ax.set(xlim=(-20, 20), ylim=(-20, 20))
+
+fig.tight_layout()
+fig.savefig("./figures/clustering")
