@@ -1,4 +1,5 @@
 import numpy as np
+np.random.seed(42)
 
 
 def f(x, a=(-.3, .5)):
