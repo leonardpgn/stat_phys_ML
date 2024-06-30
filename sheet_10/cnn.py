@@ -29,7 +29,7 @@ fig.tight_layout()
 fig.savefig('figures/sample_images.png')
 
 # build CNN
-epoch_num = 1
+epoch_num = 10
 model = Sequential()
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -49,5 +49,16 @@ test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f'Test accuracy: {test_acc:.4f}')
 print(f'Test loss: {test_loss:.4f}')
 
-# plot accuracy values
+# plot accuracy and loss values
+fig, axes = plt.subplots(1, 2, dpi=500)
+axes[0].plot(history.history['accuracy'], label='Training accuracy')
+axes[0].plot(history.history['val_accuracy'], label='Validation accuracy')
+axes[0].set(xticks=list(range(epoch_num)), xlabel='Epoch', ylabel='Accuracy', title='Model accuracy')
+axes[0].legend()
+axes[1].plot(history.history['loss'], label='Training loss')
+axes[1].plot(history.history['val_loss'], label='Validation loss')
+axes[1].set(xticks=list(range(epoch_num)), xlabel='Epoch', ylabel='Loss', title='Model loss')
+axes[1].legend()
 
+fig.tight_layout()
+fig.savefig(f'figures/cnn_performance_ep{epoch_num}.png')
