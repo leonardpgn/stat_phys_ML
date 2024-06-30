@@ -29,6 +29,7 @@ fig.tight_layout()
 fig.savefig('figures/sample_images.png')
 
 # build CNN
+epoch_num = 1
 model = Sequential()
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -40,9 +41,13 @@ model.add(Dropout(0.5))
 model.add(Dense(10, activation='softmax'))
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-history = model.fit(x_train, y_train, epochs=1, batch_size=128, validation_data=(x_test, y_test))
+history = model.fit(x_train, y_train, epochs=epoch_num, batch_size=128, validation_data=(x_test, y_test))
+model.save(f'model/cnn_ep{epoch_num}.keras')
 
 # evaluate test accuracy
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f'Test accuracy: {test_acc:.4f}')
 print(f'Test loss: {test_loss:.4f}')
+
+# plot accuracy values
+
